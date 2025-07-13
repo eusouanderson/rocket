@@ -1,11 +1,11 @@
-import type { FastifyPluginCallbackZod } from "fastify-type-provider-zod";
-import z from "zod/v4";
-import { db } from "../../db/connection.ts";
-import { schema } from "../../db/schema/index.ts";
+import type { FastifyPluginCallbackZod } from 'fastify-type-provider-zod';
+import z from 'zod/v4';
+import { db } from '../../db/connection.ts';
+import { schema } from '../../db/schema/index.ts';
 
 export const createQuestionRoute: FastifyPluginCallbackZod = (app) => {
   app.post(
-    "/rooms/:roomId/questions",
+    '/rooms/:roomId/questions',
     {
       schema: {
         params: z.object({
@@ -31,7 +31,7 @@ export const createQuestionRoute: FastifyPluginCallbackZod = (app) => {
       const insertedquestion = result[0];
 
       if (!insertedquestion) {
-        throw new Error("Failed to create new question.");
+        throw new Error('Failed to create new question.');
       }
 
       return reply.status(201).send({ questionId: insertedquestion.id });
