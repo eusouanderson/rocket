@@ -1,5 +1,5 @@
 <template>
-  <v-container class="py-10">
+  <v-container class="py-10 mt-300">
     <v-row justify="center">
       <v-col cols="12">
         <h1 class="text-center text-h4 mb-6">Salas</h1>
