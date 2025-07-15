@@ -17,9 +17,9 @@
 </template>
 
 <script setup>
+import api from '@/lib/api'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import api from '@/lib/api'
 
 const route = useRoute()
 const id = route.params.id

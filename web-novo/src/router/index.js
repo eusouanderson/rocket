@@ -10,8 +10,8 @@ const router = createRouter({
     },
     {
       path: '/rooms/:id',
-      name: 'RoomDetails',
-      component: () => import('@/views/RoomDetail.vue'),
+      name: 'RoomConnect',
+      component: () => import('@/views/RoomPeopleConnect.vue'),
     },
     {
       path: '/about',
