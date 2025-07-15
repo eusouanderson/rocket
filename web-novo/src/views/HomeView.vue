@@ -1,17 +1,29 @@
 <template>
-  <h1 class="text-center">Salas</h1>
-  <div class="text-amber-50 text-center">
-    <ul class="flex gap-6">
-      <li v-for="room in rooms" :key="room.id">
-        <router-link
-          :to="`/rooms/${room.id}`"
-          class="block bg-zinc-800 m-3 p-4 rounded-3xl hover:bg-amber-50 hover:text-black transition-colors duration-300"
-        >
-          {{ room.name }}
+  <v-container class="py-10">
+    <v-row justify="center">
+      <v-col cols="12">
+        <h1 class="text-center text-h4 mb-6">Salas</h1>
+      </v-col>
+
+      <v-col
+        v-for="room in rooms"
+        :key="room.id"
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+        class="d-flex justify-center"
+      >
+        <router-link :to="`/rooms/${room.id}`" class="text-decoration-none">
+          <v-card class="pa-4" color="grey-darken-3" variant="flat" rounded="xl" hover>
+            <v-card-title class="text-white text-center justify-center">
+              {{ room.name }}
+            </v-card-title>
+          </v-card>
         </router-link>
-      </li>
-    </ul>
-  </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script setup>
